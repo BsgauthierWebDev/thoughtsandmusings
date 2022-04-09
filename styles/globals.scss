@@ -1,0 +1,168 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap');
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  &:before{
+    content:'';
+    content: "";
+    width: 100%;
+    height: 100vh;
+    //background: linear-gradient(to right bottom, #6d327c, #485DA6, #00a1ba, #01b18e, #32b37b);
+    // background: #D3D3D3;
+    background-image: url("../public/bg.jpg");
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
+
+.text-shadow{
+  text-shadow: 0px 2px 0px rgb(0 0 0 / 30%);
+}
+
+.adjacent-post{
+  & .arrow-btn{
+    transition: width 300ms ease;
+    width: 50px;
+  }
+  &:hover{
+    & .arrow-btn{
+      width: 60px;
+    }
+  }
+}
+
+.react-multi-carousel-list {
+  & .arrow-btn{
+    transition: width 300ms ease;
+    width: 50px;
+    &:hover{
+      width: 60px;
+    }
+  }
+  
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Everything below this markup is trictly my code */
+/* I am translating Tailwind styling to CSS */
+
+.container {
+  /* container mx-auto px-10 mb-8 */
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 40px;
+  padding-right: 40px;
+  margin-bottom: 32px;
+}
+
+.main-display {
+  /* grid grid-cols-1 grid-cols-12 gap-12 */
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 48px;
+}
+
+.article-display {
+  /* lg: col-span-8 col-span-1 */
+  grid-column: span 8 / span 8;
+}
+
+.nav-display {
+  /* lg:col-span-4 col-span-1 */
+  grid-column: span 4 / span 4;
+}
+
+.nav-display-items {
+  /* lg:sticky relative top-8 */
+  position: sticky;
+  position: relative;
+  // top: 32px;
+}
+
+.Header {
+  /* container mx-auto px-10 mb-8 */
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 40px;
+  padding-right: 40px;
+  margin-bottom: 32px;
+}
+
+.Header-layout {
+  /* border-b w-full inline-block border-blue-400 py-8 */
+  border-bottom-width: 1px;
+  width: 100%;
+  display: inline-block;
+  border-color: rgb(96 165 250);
+  padding-top: 32px;
+  padding-bottom: 32px;
+}
+
+.Header-link {
+  /* md:float-left block */
+  float: left;
+  display: block;
+}
+
+.Header-title {
+  /* cursor-pointer font-bold text-4xl text-white  */
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 40px;
+  color: white;
+}
+
+.Header-nav-items {
+  /* md:float-right mt-2 align-middle text-white ml-4 font-semibold cursor-pointer */
+  margin-top: 8px;
+  vertical-align: middle;
+  color: white;
+  margin-left: 32px;
+  font-weight: 600;
+  cursor: pointer;
+  float: right;
+}
+
+
+
+/* Styling for Small Devices */
+@media all and (max-width: 600px) {
+  .main-display {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+
+  .article-display {
+    grid-column: span 1 / span 1;
+  }
+
+  .nav-display {
+    grid-column: span 1 / span 1;
+  }
+
+  .Header-nav {
+    display: none;
+  }
+}

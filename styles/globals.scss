@@ -66,6 +66,12 @@ a {
 /* Everything below this markup is trictly my code */
 /* I am translating Tailwind styling to CSS */
 
+a:hover {
+  /* hover:text-purple-600 transition duration-700  */
+  color: rgb(126 34 206);
+  transition-duration: 700ms;
+}
+
 .container {
   /* container mx-auto px-10 mb-8 */
   width: 80%;
@@ -144,6 +150,139 @@ a {
   font-weight: 600;
   cursor: pointer;
   float: right;
+}
+
+.article-card-frame {
+  /* bg-white shadow-lg rounded-lg p-0 lg:p-8 pb-12 mb-8 */
+  background-color: white;
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  border-radius: 8px;
+  padding: 32px;
+  padding-bottom: 48px;
+  margin-bottom: 32px;
+}
+
+.article-card-image-frame {
+  /* relative overflow-hidden shadow-md pb-80 mb-6 */
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  padding-bottom: 320px;
+  margin-bottom: 24px;
+}
+
+.article-card-image {
+  /* object-top absolute h-80 w-full object-cover shadow-lg rounded-t-lg rounded-lg */
+  object-position: top;
+  position: absolute;
+  height: 320px;
+  width: 100%;
+  object-fit: cover;
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  border-radius: 8px;
+}
+
+.article-card-title {
+  /* text-center mb-8 cursor:pointer text-3xl font-semibold */
+  text-align: center;
+  margin-bottom: 32px;
+  cursor: pointer;
+  font-size: 30px;
+  line-height: 36px;
+  font-weight: 600;
+}
+
+.article-card-preview {
+  /* block lg:flex text-center items-center justify-center mb-8 w-full */
+  display: block;
+  flex: 1 1 auto;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 32px;
+  width: 100%;
+}
+
+.article-card-author-image {
+  /* flex items-center justify-center mb-4 lg:mb-0 w-full lg:w-auto mr-8 */
+  flex: 1 1 auto;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0;
+  width: auto;
+  margin-right: 32px;
+}
+
+.article-card-author-image-display {
+  /* align-middle rounded-full */
+  height: 50px;
+  width: 50px;
+  vertical-align: middle;
+  border-radius: 9999px;
+}
+
+.article-card-author-name {
+  /* inline align-middle text-gray-700 ml-2 text-lg */
+  display: inline;
+  vertical-align: middle;
+  color: rgb(75 85 99);
+  margin-left: 8px;
+  font-size: 18px;
+  line-height: 28px;
+}
+
+.article-card-date {
+  /* font-medium text-gray-700 */
+  font-weight: 500;
+  color: rgb(75 85 99);
+}
+
+.article-card-calendar-image {
+  /* h-6 w-6 inline mr-2 text-pink-500 */
+  height: 28px;
+  width: 28px;
+  display: inline;
+  margin-right: 8px;
+  color: rgb(126 34 206)
+}
+
+.article-card-preview-text {
+  /* text-center text-lg text-gray-700 font-normal px-4 lg:px-20 mb-8 */
+  text-align: center;
+  font-size: 18px;line-height: 28px;
+  color: rgb(75 85 99);
+  font-weight: 400;
+  padding-left: 80px;
+  padding-right: 80px;
+  margin-bottom: 32px;
+}
+
+.article-card-link {
+  /* text-center */
+  text-align: center;
+}
+
+.article-card-hyperlink {
+  /* inline-block bg-pink-600 text-lg font-medium rounded-full text-white px-8 py-3 cursor-pointer*/
+  display: inline-block;
+  background-color: rgb(168 85 247);
+  font-size: 18px;
+  line-height: 28px;
+  font-weight: 500;
+  border-radius: 9999px;
+  color: white;
+  padding-left: 32px;
+  padding-right: 32px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.article-card-hyperlink:hover {
+  /* transition duration-500 transform hover:-translate-y-1 */
+  transition-duration: 500ms;
+  transform: translateY(0.25rem);
 }
 
 

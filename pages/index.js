@@ -1,12 +1,15 @@
 import Head from 'next/head'
 import {ArticleCard, ArticleWidget, Topics} from '../components';
+import {getArticles} from '../services';
 
-const articles = [
-  {title: 'Test Article 1', preview: 'The First Test Article'},
-  {title: 'Test Article 2', preview: 'Adding Another Article to Test Layout'}
-]
+// const articles = [
+//   {title: 'Test Article 1', preview: 'The First Test Article'},
+//   {title: 'Test Article 2', preview: 'Adding Another Article to Test Layout'}
+// ]
 
-export default function Home() {
+
+
+export default function Home({articles}) {
   return (
     <div className = 'container'>
       <Head>
@@ -15,7 +18,7 @@ export default function Home() {
       </Head>
       <div className = 'main-display'>
         <div className = 'article-display'>
-          {articles.map((article, index) => (<ArticleCard article = {article} key = {article.title}/>))}
+          {articles.map((article, index) => (<ArticleCard article = {article.node} key = {article.title}/>))}
         </div>
         <div className = 'nav-display'>
             <div className = 'nav-display-items'>
@@ -40,4 +43,12 @@ export default function Home() {
       </footer> */}
     </div>
   )
+}
+
+export async function getStaticProps() {
+  const articles = (await getArticles()) || [];
+
+  return {
+    props: {articles}
+  }
 }
